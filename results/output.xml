@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.9 on win32)" generated="20231114 21:17:20.949" rpa="false" schemaversion="4">
+<suite id="s1" name="Ecommerce-Test" source="C:\Users\Acern\ecommerce-test">
+<suite id="s1-s1" name="Backend Test" source="C:\Users\Acern\ecommerce-test\backend_test">
+<suite id="s1-s1-s1" name="Test" source="C:\Users\Acern\ecommerce-test\backend_test\Test">
+<suite id="s1-s1-s1-s1" name="Main" source="C:\Users\Acern\ecommerce-test\backend_test\Test\main.robot">
+<test id="s1-s1-s1-s1-t1" name="Test de mise à jour des informations des utilisateurs" line="56">
+<kw name="Set Variable" library="BuiltIn">
+<var>${result}</var>
+<arg>update tbl_customer set cust_name='Yvan' where cust_id=1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231114 21:17:22.221" level="INFO">${result} = update tbl_customer set cust_name='Yvan' where cust_id=1</msg>
+<status status="PASS" starttime="20231114 21:17:22.219" endtime="20231114 21:17:22.221"/>
+</kw>
+<kw name="Execute Sql String" library="DatabaseLibrary">
+<arg>${result}</arg>
+<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
+True to run command without an explicit transaction commit or rollback.</doc>
+<msg timestamp="20231114 21:17:22.226" level="FAIL">AttributeError: 'NoneType' object has no attribute 'cursor'</msg>
+<status status="FAIL" starttime="20231114 21:17:22.225" endtime="20231114 21:17:22.229"/>
+</kw>
+<kw name="Query" library="DatabaseLibrary">
+<var>${result}</var>
+<arg>select * from tbl_customer</arg>
+<doc>Uses the input `selectStatement` to query for the values that will be returned as a list of tuples. Set optional
+input `sansTran` to True to run command without an explicit transaction commit or rollback.
+Set optional input `returnAsDict` to True to return values as a list of dictionaries.</doc>
+<status status="NOT RUN" starttime="20231114 21:17:22.229" endtime="20231114 21:17:22.230"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${result}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" starttime="20231114 21:17:22.231" endtime="20231114 21:17:22.232"/>
+</kw>
+<status status="FAIL" starttime="20231114 21:17:22.215" endtime="20231114 21:17:22.233">AttributeError: 'NoneType' object has no attribute 'cursor'</status>
+</test>
+<status status="FAIL" starttime="20231114 21:17:21.079" endtime="20231114 21:17:22.235"/>
+</suite>
+<status status="FAIL" starttime="20231114 21:17:21.073" endtime="20231114 21:17:22.243"/>
+</suite>
+<status status="FAIL" starttime="20231114 21:17:21.063" endtime="20231114 21:17:22.251"/>
+</suite>
+<status status="FAIL" starttime="20231114 21:17:20.962" endtime="20231114 21:17:22.262"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Ecommerce-Test">Ecommerce-Test</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Backend Test">Ecommerce-Test.Backend Test</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Test">Ecommerce-Test.Backend Test.Test</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Main">Ecommerce-Test.Backend Test.Test.Main</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
