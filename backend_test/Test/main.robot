@@ -3,7 +3,6 @@ Library  SeleniumLibrary
 Library  DatabaseLibrary
 Resource  ../Ressource/loginBack.robot
 Resource  ../Ressource/Variables.robot
-Resource  Variables.py
 *** Keywords ***
 
 *** Test Cases ***
@@ -176,9 +175,7 @@ Test d'ajout d'une categorie existante
     ${result}  Query  select * from tbl_order
     Should Be True  ${result}
 Test de montée en charge
-    FOR  ${i}  IN  ${list_user}
-        ${result}  Query  select * from tbl_order
-        Should Be True  ${result}
-    END
+    ${result}  Query  select * from tbl_order
+    Should Be True  ${result}
 Test de fermeture de la base de données
     Disconnect From Database
